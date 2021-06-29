@@ -33,8 +33,7 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run PHP CS Fixer
-        run: /
-          composer format
+        run: vendor/bin/php-cs-fixer fix
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
