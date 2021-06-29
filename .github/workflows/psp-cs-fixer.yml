@@ -28,9 +28,7 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: |
-          composer require "illuminate/contracts=${{ matrix.laravel }}" --prefer-dist --no-interaction --no-update
-          composer update --prefer-dist --no-interaction --no-progress
+        run: composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run PHP CS Fixer
         run: vendor/bin/php-cs-fixer fix
