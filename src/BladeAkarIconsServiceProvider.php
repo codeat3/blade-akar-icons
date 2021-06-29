@@ -9,8 +9,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Container\Container;
 
 final class BladeAkarIconsServiceProvider extends ServiceProvider {
-    public function register(): void
-    {
+    public function register(): void {
         $this->registerConfig();
 
         $this->callAfterResolving(Factory::class, function (Factory $factory, Container $container) {
