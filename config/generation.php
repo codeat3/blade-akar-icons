@@ -12,11 +12,6 @@ class BladeAkarIcons extends IconProcessor
 
         return $this;
     }
-
-    public function optimize()
-    {
-        return parent::optimize();
-    }
 }
 
 $svgNormalization = static function (string $tempFilepath, array $iconSet) {
