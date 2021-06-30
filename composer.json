@@ -1,7 +1,12 @@
 {
     "name": "codeat3/blade-akar-icons",
     "description": "A package to easily make use of Akar Icons in your Laravel Blade views.",
-    "keywords": ["Blade", "akar", "icons", "Laravel"],
+    "keywords": [
+        "Blade",
+        "akar",
+        "icons",
+        "Laravel"
+    ],
     "homepage": "https://github.com/codeat3/blade-akar-icons",
     "license": "MIT",
     "authors": [
@@ -20,6 +25,7 @@
         "illuminate/support": "^8.0"
     },
     "require-dev": {
+        "codeat3/blade-icon-generation-helpers": "dev-poc",
         "codeat3/phpcs-styles": "dev-main",
         "orchestra/testbench": "^6.0",
         "phpunit/phpunit": "^9.0"
@@ -37,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-              "Codeat3\\BladeAkarIcons\\BladeAkarIconsServiceProvider"
+                "Codeat3\\BladeAkarIcons\\BladeAkarIconsServiceProvider"
             ]
         }
     },

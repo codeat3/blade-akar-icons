@@ -1,9 +1,9 @@
-name: Check & fix styling
+name: Auto Update Icons
 
 on: [push]
 
 jobs:
-  php-cs-fixer:
+  generate:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,6 +20,12 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Checkout dependent repo
+        uses: actions/checkout@v2
+        with:
+          repository: artcoholic/akar-icons
+          path: dist
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -28,12 +34,12 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: composer update --prefer-dist --no-interaction --no-progress
+        run: composer update --no-interaction --no-progress --dev
 
       - name: Run PHP CS Fixer
-        run: vendor/bin/php-cs-fixer fix
+        run: vendor/bin/blade-icons-generate
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Fix styling
+          commit_message: Added new icons

@@ -8,7 +8,8 @@ use BladeUI\Icons\Factory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Container\Container;
 
-final class BladeAkarIconsServiceProvider extends ServiceProvider {
+final class BladeAkarIconsServiceProvider extends ServiceProvider
+{
     public function register(): void
     {
         $this->registerConfig();
@@ -18,8 +19,7 @@ final class BladeAkarIconsServiceProvider extends ServiceProvider {
 
             $factory->add('akar-icons', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
         });
-
-}
+    }
 
     private function registerConfig(): void
     {
@@ -38,5 +38,4 @@ final class BladeAkarIconsServiceProvider extends ServiceProvider {
             ], 'blade-akar-icons-config');
         }
     }
-
 }
