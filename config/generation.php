@@ -1,5 +1,11 @@
 <?php
 
+use Codeat3\BladeIconGeneration\IconProcessor;
+
+class BladeAkarIcons extends IconProcessor {
+
+}
+
 $svgNormalization = static function (string $tempFilepath, array $iconSet) {
 
     $doc = new DOMDocument();
@@ -29,6 +35,10 @@ $svgNormalization = static function (string $tempFilepath, array $iconSet) {
     $svgLine = preg_replace('/\<\?xml.*\?\>/','',$svgLine);
     $svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $svgLine);
     $svgLine = str_replace('fill="black"', 'fill="currentColor"', $svgLine);
+
+    // changing the name
+    $iconProcessor = new BladeAkarIcons($tempFilepath, $iconSet);
+    $tempFilepath = $iconProcessor->getDestinationFileName();
 
     file_put_contents($tempFilepath, $svgLine);
 };
