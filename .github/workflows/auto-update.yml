@@ -34,7 +34,7 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: composer update --prefer-dist --no-interaction --no-progress --dev
+        run: composer update --no-interaction --no-progress --dev
 
       - name: Run PHP CS Fixer
         run: vendor/bin/blade-icons-generate
