@@ -2,47 +2,31 @@
 
 use Codeat3\BladeIconGeneration\IconProcessor;
 
-class BladeAkarIcons extends IconProcessor {
+class BladeAkarIcons extends IconProcessor
+{
+    public function postOptimization()
+    {
+        $this->svgLine = preg_replace('/\<\?xml.*\?\>/', '', $this->svgLine);
+        $this->svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $this->svgLine);
+        $this->svgLine = str_replace('fill="black"', 'fill="currentColor"', $this->svgLine);
 
+        return $this;
+    }
+
+    public function optimize()
+    {
+        return parent::optimize();
+    }
 }
 
 $svgNormalization = static function (string $tempFilepath, array $iconSet) {
 
-    $doc = new DOMDocument();
-    $doc->formatOutput = false;
-    $doc->load($tempFilepath);
-
-    /**
-     * @var DOMElement $svgElement
-     */
-    $svgElement = $doc->getElementsByTagName('svg')[0];
-
-    // Remove all the attributes to control order of them on output
-    $svgElement->removeAttribute('width');
-    $svgElement->removeAttribute('height');
-    // $svgElement->removeAttribute('viewBox');
-    $svgElement->removeAttribute('fill');
-    // For some reason PHP's DOMElement likes to put xmlns first even if you don't touch it.
-    $svgElement->removeAttributeNS('http://www.w3.org/2000/svg', null);
-    // Add them back in the correct order to match current results...
-    $svgElement->setAttribute('fill', 'none');
-    $svgElement->setAttributeNS(null, 'xmlns', 'http://www.w3.org/2000/svg');
-    $svgElement->setAttribute('stroke', 'currentColor');
-
-    $doc->save($tempFilepath);
-
-    $svgLine = str_replace(PHP_EOL, '', file_get_contents($tempFilepath));
-    $svgLine = preg_replace('/\<\?xml.*\?\>/','',$svgLine);
-    $svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $svgLine);
-    $svgLine = str_replace('fill="black"', 'fill="currentColor"', $svgLine);
-
-    // changing the name
+    // perform generic optimizations
     $iconProcessor = new BladeAkarIcons($tempFilepath, $iconSet);
-    $cleanPath = $iconProcessor->getDestinationFilePath();
-
-    rename($tempFilepath, $cleanPath);
-
-    file_put_contents($cleanPath, $svgLine);
+    $iconProcessor
+        ->optimize()
+        ->postOptimization()
+        ->save();
 };
 
 return [
@@ -59,5 +43,9 @@ return [
         // Call an optional callback to manipulate the icon
         // with the pathname of the icon and the settings from above...
         'after' => $svgNormalization,
+
+        'custom-attributes' => [
+            'stroke' => 'currentColor'
+        ]
     ],
 ];
