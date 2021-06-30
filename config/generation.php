@@ -38,7 +38,7 @@ $svgNormalization = static function (string $tempFilepath, array $iconSet) {
 
     // changing the name
     $iconProcessor = new BladeAkarIcons($tempFilepath, $iconSet);
-    $cleanPath = $iconProcessor->getDestinationFileName();
+    $cleanPath = $iconProcessor->getDestinationFilePath();
 
     rename($tempFilepath, $cleanPath);
 
