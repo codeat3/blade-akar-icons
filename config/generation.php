@@ -2,25 +2,19 @@
 
 use Codeat3\BladeIconGeneration\IconProcessor;
 
-class BladeAkarIcons extends IconProcessor
-{
-    public function postOptimization()
-    {
-        $this->svgLine = preg_replace('/\<\?xml.*\?\>/', '', $this->svgLine);
-        $this->svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $this->svgLine);
-        $this->svgLine = str_replace('fill="black"', 'fill="currentColor"', $this->svgLine);
-
-        return $this;
-    }
-}
-
 $svgNormalization = static function (string $tempFilepath, array $iconSet) {
 
     // perform generic optimizations
-    $iconProcessor = new BladeAkarIcons($tempFilepath, $iconSet);
+    $iconProcessor = new IconProcessor($tempFilepath, $iconSet);
     $iconProcessor
         ->optimize()
-        ->postOptimization()
+        ->postOptimizationAsString(function ($svgLine) {
+
+            $svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $svgLine);
+            $svgLine = str_replace('fill="black"', 'fill="currentColor"', $svgLine);
+
+            return $svgLine;
+        })
         ->save();
 };
 
