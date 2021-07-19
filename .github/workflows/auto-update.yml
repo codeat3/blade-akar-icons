@@ -36,8 +36,11 @@ jobs:
       - name: Install dependencies
         run: composer update --no-interaction --no-progress --dev
 
-      - name: Run PHP CS Fixer
-        run: vendor/bin/fetch-latest-icons && vendor/bin/blade-icons-generate
+      - name: Run Fetch Latest Icons
+        run: vendor/bin/fetch-latest-icons
+
+      - name: Run Generate Icons
+        run: vendor/bin/blade-icons-generate
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
