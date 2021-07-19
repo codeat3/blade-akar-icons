@@ -69,11 +69,11 @@ jobs:
         if: env.CURRENT_COMMIT != env.LATEST_COMMIT
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: "chore: update icons with the latest commit v${{ env.LATEST_COMMIT }}"
+          commit-message: "auto-update: update icons with the latest commit ${{ env.LATEST_COMMIT }}"
           committer: GitHub Action <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           title: "chore: update icons with the latest commit v${{ env.LATEST_COMMIT }}"
           body: |
-            This updates from [${{ env.CURRENT_COMMIT }}](https://github.com/${{ env.REPOSITORY }}/commit/{{ env.CURRENT_COMMIT }}) to [${{ env.LATEST_COMMIT }}](https://github.com/${{ env.REPOSITORY }}/commit/${{ env.LATEST_COMMIT }}).
+            This updates from [${{ env.CURRENT_COMMIT }}](https://github.com/${{ env.REPOSITORY }}/commit/${{ env.CURRENT_COMMIT }}) to [${{ env.LATEST_COMMIT }}](https://github.com/${{ env.REPOSITORY }}/commit/${{ env.LATEST_COMMIT }}).
             Check out the differences: [`${{ env.CURRENT_COMMIT }}` ... `${{ env.LATEST_COMMIT }}`](https://github.com/${{ env.REPOSITORY }}/compare/${{ env.CURRENT_COMMIT }}...${{ env.LATEST_COMMIT }})
           branch: feature/update-${{ env.LATEST_COMMIT }}
