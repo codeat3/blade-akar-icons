@@ -2,6 +2,9 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
+## 1.3.1 (2021-07-19)
+* synced icons from the latest commit in the parent repository (https://github.com/artcoholic/akar-icons/commit/5fd427216e1d950109ab2ccabbb94f8bd952b1c4)
+
 ## 1.2.1 (2021-07-19)
 * added auto update action
 * synced icons from the latest commit in the parent repository (https://github.com/artcoholic/akar-icons/commit/e808f33982f8b4c4bf0d38cc7a6aaf13182a41a7)
