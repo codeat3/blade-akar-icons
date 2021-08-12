@@ -2,6 +2,9 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
+## 1.4.1 (2021-08-12)
+* Synced with the latest release [Akar Icons - v1.8.6] (https://github.com/artcoholic/akar-icons/releases/tag/v1.8.6)
+
 ## 1.3.1 (2021-07-19)
 * synced icons from the latest commit in the parent repository (https://github.com/artcoholic/akar-icons/commit/5fd427216e1d950109ab2ccabbb94f8bd952b1c4)
 
