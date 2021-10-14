@@ -2,6 +2,7 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
+## [Unreleased](https://github.com/blade-ui-kit/blade-icons/compare/1.8.1...main)
 
 ## 1.8.1 (2021-10-14)
 * Synced with the latest release [Akar Icons - v1.9.0](https://github.com/artcoholic/akar-icons/releases/tag/v1.9.0)
