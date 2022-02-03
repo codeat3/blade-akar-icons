@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.10.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.11.1...HEAD)
+
+## [1.11.1](https://github.com/codeat3/blade-akar-icons/compare/1.10.1...1.11.1) - 2022-02-03
+
+## Updates
+
+- Added support for Laravel 9 by @swapnilsarwe in https://github.com/codeat3/blade-akar-icons/pull/25
+
+**Full Changelog**: https://github.com/codeat3/blade-akar-icons/compare/1.10.1...1.11.1
 
 ## [1.10.1](https://github.com/codeat3/blade-akar-icons/compare/1.9.1...1.10.1) - 2022-01-10
 
