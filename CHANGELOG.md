@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.16.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.17.1...HEAD)
+
+## [1.17.1](https://github.com/codeat3/blade-akar-icons/compare/1.16.1...1.17.1) - 2022-06-21
+
+### What's Changed
+
+- chore: update icons with the latest commit [92c1118](https://github.com/artcoholic/akar-icons/commit/92c11186378f4936649fd11d139e04b4aabaa9ee) by @github-actions in https://github.com/codeat3/blade-akar-icons/pull/33
+
+**Full Changelog**: https://github.com/codeat3/blade-akar-icons/compare/1.16.1...1.17.1
 
 ## [1.16.1](https://github.com/codeat3/blade-akar-icons/compare/1.15.1...1.16.1) - 2022-05-17
 
