@@ -2,7 +2,12 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.23.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/2.0.0...HEAD)
+
+## [2.0.0](https://github.com/codeat3/blade-akar-icons/compare/1.23.1...2.0.0) - 2024-02-27
+
+Dropped support for php 7.4
+added support for laravel 11
 
 ## [1.23.1](https://github.com/codeat3/blade-akar-icons/compare/1.22.1...1.23.1) - 2023-05-16
 
