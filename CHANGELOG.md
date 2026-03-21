@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.25.0...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-akar-icons/compare/1.26.0...HEAD)
+
+## [1.26.0](https://github.com/codeat3/blade-akar-icons/compare/1.25.0...1.26.0) - 2026-03-21
+
+### What's Changed
+
+* laravel 13 compatibility by @swapnilsarwe in https://github.com/codeat3/blade-akar-icons/pull/47
+
+**Full Changelog**: https://github.com/codeat3/blade-akar-icons/compare/1.25.0...1.26.0
 
 ## [1.25.0](https://github.com/codeat3/blade-akar-icons/compare/1.24.0...1.25.0) - 2025-02-25
 
